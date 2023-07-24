@@ -1,0 +1,32 @@
+name: MkDocs Build
+
+# ref: https://squidfunk.github.io/mkdocs-material/publishing-your-site/
+on:
+  # Triggers the workflow on push only for the "main" branch
+  push:
+    branches:
+      - 'main'
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v3
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material
+      - run: pip install mkdocs-awesome-pages-plugin
+      - run: mkdocs gh-deploy --force
