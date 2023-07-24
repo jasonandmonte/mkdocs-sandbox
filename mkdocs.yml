@@ -1,0 +1,34 @@
+site_name: Sandbox Documentation Site
+
+theme:
+  name: material
+  palette:
+    primary: teal
+  logo: assets/logo.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.keys
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - awesome-pages
+
