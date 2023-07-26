@@ -1,3 +1,1 @@
-site/*
-# exception to the rule
-!site/.gitkeep
+site/
