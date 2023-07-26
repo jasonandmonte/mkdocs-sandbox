@@ -1,4 +1,7 @@
 site/*
-
 # exception to the rule
-!site/.gitkeep 
+!site/.gitkeep
+
+.cache/*
+# exception to the rule
+!cache/.gitkeep 
