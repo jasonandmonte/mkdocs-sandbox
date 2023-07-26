@@ -4,4 +4,4 @@ site/*
 
 .cache/*
 # exception to the rule
-!cache/.gitkeep 
+!.cache/.gitkeep 
