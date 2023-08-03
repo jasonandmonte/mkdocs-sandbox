@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: 3.x
       - run: sudo pip install -r requirements.txt
-      - run: ln -s /usr/local/lib/python3.1*/dist-packages/material/.icons/*/ .
+      - run: ln -sf /usr/local/lib/python3.1*/dist-packages/material/.icons/*/ .
         working-directory: docs/stylesheets/icons/
       # Builds doc site, commits changes, and pushes to `gh-pages` branch
       - run: mkdocs gh-deploy --force
