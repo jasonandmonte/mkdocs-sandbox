@@ -1,34 +1,64 @@
-site_name: Sandbox Documentation Site
-
-theme:
-  name: material
-  palette:
-    primary: teal
-  logo: assets/logo.png
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.indexes
-
 extra_css:
   - stylesheets/extra.css
-
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 markdown_extensions:
+  - abbr
   - admonition
-  - pymdownx.keys
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - attr_list
+  - def_list
+  - footnotes
+  - markdown_include.include:
+      base_path: incs
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.caret
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      linenums: true
+      use_pygments: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - smarty:
+      smart_quotes: true
+      smart_angled_quotes: true
+  - tables
+theme:
+  favicon: assets/logo.gif
+  features:
+    - content.code.annotate
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+  logo: assets/logo.gif
+  name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
 
-plugins:
-  - awesome-pages
-
+    - scheme: slate
+      primary: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode

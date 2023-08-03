@@ -1,0 +1,47 @@
+:root {
+    /* --md-admonition-icon--todo: url('icons/material/checkbox-marked.svg'); */
+    --md-admonition-icon--todo: url("icons/material/format-list-checks.svg");
+    --md-admonition-icon--fixme: url("icons/material/account-wrench.svg");
+}
+:root > * {
+    /* code block line highlight */
+    --md-code-hl-color: #e3eaf6;
+}
+.md-typeset .admonition.todo,
+.md-typeset details.todo {
+    border-color: rgb(251, 225, 81);
+}
+.md-typeset .todo > .admonition-title,
+.md-typeset .todo > summary {
+    background-color: rgba(251, 225, 81, 0.1);
+}
+.md-typeset .todo > .admonition-title::before,
+.md-typeset .todo > summary::before {
+    background-color: rgb(251, 225, 81);
+    -webkit-mask-image: var(--md-admonition-icon--todo);
+    mask-image: var(--md-admonition-icon--todo);
+}
+.md-typeset .todo > .admonition-title:after,
+.md-typeset .todo > summary:after {
+    color: rgb(251, 225, 81);
+}
+.md-typeset .admonition.fixme,
+.md-typeset details.fixme {
+    border-color: rgb(251, 146, 80);
+}
+.md-typeset .fixme > .admonition-title,
+.md-typeset .fixme > summary {
+    background-color: rgba(251, 146, 80, 0.1);
+}
+.md-typeset .fixme > .admonition-title::before,
+.md-typeset .fixme > summary::before {
+    background-color: rgb(251, 146, 80);
+    -webkit-mask-image: var(--md-admonition-icon--fixme);
+    mask-image: var(--md-admonition-icon--fixme);
+}
+.md-typeset .fixme > .admonition-title:after,
+.md-typeset .fixme > summary:after {
+    color: rgb(251, 146, 80);
+}
+
+
