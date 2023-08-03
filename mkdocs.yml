@@ -1,3 +1,4 @@
+site_name: Test Site
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
